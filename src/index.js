@@ -22,8 +22,7 @@ app.use('/api' , userRoutes)
 //mongo db
 mongoose
 .connect(process.env.MONGODB_URI)
-.then(()=> console.log("conectou"))
-.catch(()=> console.error(error))
+
 
 app.listen(port, ()=> console.log("porta tal", port))
 
