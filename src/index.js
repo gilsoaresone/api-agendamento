@@ -18,14 +18,7 @@ app.get("/", (req, res) => {
 
 // mongodb connection
 mongoose
-    .connect(process.env.MONGODB_URI, 
-             {
- useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  family: 4 // Use IPv4, skip trying IPv6
-}
-            )
+    .connect(process.env.MONGODB_URI)
     .then(() => console.log("Connected to MongoDB Atlas"))
     .catch((error) => console.error(error));
 
