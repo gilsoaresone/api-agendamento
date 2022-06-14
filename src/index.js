@@ -14,6 +14,10 @@ app.use("/api", userRoute);
 // routes
 app.get("/", (req, res) => {
     res.send("Welcome to my API");
+    function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
 });
 
 // mongodb connection
